@@ -5,7 +5,7 @@ import QRCode from 'qrcode';
 
 export default function QRPage() {
   const [qrCode, setQrCode] = useState<string | null>(null);
-  const menuUrl = 'https://tas-mekan.vercel.app/menu';
+  const menuUrl = 'https://tas-mekan.vercel.app/#menu';
 
   useEffect(() => {
     async function generateQR() {
