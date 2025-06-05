@@ -33,7 +33,7 @@ export default function AdminDashboard() {
       if (res.ok) {
         setMenuItems(data.map((item: any) => ({
           ...item,
-          _id: item._id?.toString() || item.id
+          _id: item._id?.toString()
         })));
       } else {
         setError('Menü öğeleri yüklenirken bir hata oluştu');
@@ -174,7 +174,7 @@ export default function AdminDashboard() {
           <h2 className="text-xl font-semibold mb-4">Mevcut Ürünler</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {menuItems.map((item) => (
-              <div key={item._id || item.name} className="border rounded-lg p-4">
+              <div key={item._id?.toString()} className="border rounded-lg p-4">
                 {item.image && (
                   <img
                     src={item.image}
@@ -187,7 +187,7 @@ export default function AdminDashboard() {
                 <p className="text-amber-600 font-bold mb-2">{item.price} ₺</p>
                 <p className="text-gray-500 text-sm mb-4">{item.category}</p>
                 <button
-                  onClick={() => handleDelete(item._id)}
+                  onClick={() => handleDelete(item._id?.toString() || '')}
                   className="bg-red-500 text-white px-4 py-1 rounded-md hover:bg-red-600 text-sm"
                 >
                   Sil

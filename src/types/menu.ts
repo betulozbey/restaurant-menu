@@ -1,7 +1,7 @@
 import { Types } from 'mongoose';
 
 export interface MenuItem {
-  _id?: string;
+  _id?: string | Types.ObjectId;
   name: string;
   price: number;
   image: string;
