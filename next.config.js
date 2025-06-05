@@ -1,13 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  output: 'export',
   images: {
-    domains: ['*'], // Tüm domainlerden resim yüklemeye izin ver
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   },
-  env: {
-    MONGODB_URI: process.env.MONGODB_URI,
-    MONGODB_PASSWORD: process.env.MONGODB_PASSWORD,
-  },
+  trailingSlash: true,
 }
 
 module.exports = nextConfig 
