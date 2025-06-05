@@ -44,7 +44,7 @@ export default function RootLayout({
                   Geleneksel lezzetleri modern sunumla buluşturuyoruz.
                 </p>
               </div>
-              <div>
+              <div>c
                 <h3 className="text-xl font-bold mb-4">İletişim</h3>
                 <p className="text-gray-400">
                   Tel 1: (0546) 772 76 11<br />

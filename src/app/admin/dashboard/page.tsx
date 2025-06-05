@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { MenuItemType } from '@/types/menu';
+import { MenuItem } from '@/types/menu';
 import AdminNav from '@/components/AdminNav';
 
 export default function AdminDashboard() {
-  const [menuItems, setMenuItems] = useState<MenuItemType[]>([]);
+  const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const router = useRouter();
@@ -102,14 +102,23 @@ export default function AdminDashboard() {
 
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
           <h2 className="text-xl font-semibold mb-4">Yeni Ürün Ekle</h2>
-          <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="block text-gray-700 mb-2">Ürün Adı</label>
               <input
                 type="text"
                 value={newItem.name}
                 onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
-                className="w-full px-3 py-2 border rounded-md"
+                className="w-full p-2 border rounded-md"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-gray-700 mb-2">Açıklama</label>
+              <textarea
+                value={newItem.description}
+                onChange={(e) => setNewItem({ ...newItem, description: e.target.value })}
+                className="w-full p-2 border rounded-md"
                 required
               />
             </div>
@@ -119,7 +128,7 @@ export default function AdminDashboard() {
                 type="number"
                 value={newItem.price}
                 onChange={(e) => setNewItem({ ...newItem, price: e.target.value })}
-                className="w-full px-3 py-2 border rounded-md"
+                className="w-full p-2 border rounded-md"
                 required
               />
             </div>
@@ -128,42 +137,30 @@ export default function AdminDashboard() {
               <select
                 value={newItem.category}
                 onChange={(e) => setNewItem({ ...newItem, category: e.target.value })}
-                className="w-full px-3 py-2 border rounded-md"
+                className="w-full p-2 border rounded-md"
               >
                 <option value="Kahvaltı">Kahvaltı</option>
                 <option value="İçecekler">İçecekler</option>
-                <option value="Tatlılar">Tatlılar</option>
                 <option value="Ana Yemekler">Ana Yemekler</option>
+                <option value="Tatlılar">Tatlılar</option>
                 <option value="Aperatifler">Aperatifler</option>
               </select>
             </div>
             <div>
-              <label className="block text-gray-700 mb-2">Resim URL</label>
+              <label className="block text-gray-700 mb-2">Görsel URL</label>
               <input
-                type="url"
+                type="text"
                 value={newItem.image}
                 onChange={(e) => setNewItem({ ...newItem, image: e.target.value })}
-                className="w-full px-3 py-2 border rounded-md"
+                className="w-full p-2 border rounded-md"
               />
             </div>
-            <div className="md:col-span-2">
-              <label className="block text-gray-700 mb-2">Açıklama</label>
-              <textarea
-                value={newItem.description}
-                onChange={(e) => setNewItem({ ...newItem, description: e.target.value })}
-                className="w-full px-3 py-2 border rounded-md"
-                rows={3}
-                required
-              />
-            </div>
-            <div className="md:col-span-2">
-              <button
-                type="submit"
-                className="bg-amber-600 text-white px-6 py-2 rounded-md hover:bg-amber-700"
-              >
-                Ürün Ekle
-              </button>
-            </div>
+            <button
+              type="submit"
+              className="bg-amber-600 text-white px-4 py-2 rounded-md hover:bg-amber-700"
+            >
+              Ürün Ekle
+            </button>
           </form>
         </div>
 
@@ -181,7 +178,7 @@ export default function AdminDashboard() {
                 )}
                 <h3 className="font-semibold">{item.name}</h3>
                 <p className="text-gray-600 text-sm mb-2">{item.description}</p>
-                <p className="text-amber-600 font-bold mb-2">{item.price.toFixed(2)} ₺</p>
+                <p className="text-amber-600 font-bold mb-2">{item.price} ₺</p>
                 <p className="text-gray-500 text-sm mb-4">{item.category}</p>
                 <button
                   onClick={() => handleDelete(item._id)}
