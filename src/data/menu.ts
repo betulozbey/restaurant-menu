@@ -3,6 +3,7 @@ import { MenuItem } from '../types/menu';
 export const menuItems: MenuItem[] = [
   // SICAK İÇECEKLER
   {
+    _id: 'cay',
     id: 'cay',
     name: 'Çay',
     price: 20,
@@ -11,6 +12,7 @@ export const menuItems: MenuItem[] = [
     category: 'SICAK_ICECEKLER'
   },
   {
+    _id: 'turk-kahvesi',
     id: 'turk-kahvesi',
     name: 'Türk Kahvesi',
     price: 50,
@@ -19,6 +21,7 @@ export const menuItems: MenuItem[] = [
     category: 'SICAK_ICECEKLER'
   },
   {
+    _id: 'filtre-kahve',
     id: 'filtre-kahve',
     name: 'Filtre Kahve',
     price: 100,
@@ -27,6 +30,7 @@ export const menuItems: MenuItem[] = [
     category: 'SICAK_ICECEKLER'
   },
   {
+    _id: 'latte',
     id: 'latte',
     name: 'Latte',
     price: 80,
@@ -35,6 +39,7 @@ export const menuItems: MenuItem[] = [
     category: 'SICAK_ICECEKLER'
   },
   {
+    _id: 'americano',
     id: 'americano',
     name: 'Americano',
     price: 80,
@@ -43,6 +48,7 @@ export const menuItems: MenuItem[] = [
     category: 'SICAK_ICECEKLER'
   },
   {
+    _id: 'espresso',
     id: 'espresso',
     name: 'Espresso',
     price: 80,
@@ -51,6 +57,7 @@ export const menuItems: MenuItem[] = [
     category: 'SICAK_ICECEKLER'
   },
   {
+    _id: 'caramel-macchiato',
     id: 'caramel-macchiato',
     name: 'Caramel Macchiato',
     price: 120,
@@ -60,6 +67,7 @@ export const menuItems: MenuItem[] = [
   },
   // SOĞUK İÇECEKLER
   {
+    _id: 'su',
     id: 'su',
     name: 'Su',
     price: 20,
@@ -68,6 +76,7 @@ export const menuItems: MenuItem[] = [
     category: 'SOGUK_ICECEKLER'
   },
   {
+    _id: 'sade-soda',
     id: 'sade-soda',
     name: 'Sade Soda',
     price: 40,
