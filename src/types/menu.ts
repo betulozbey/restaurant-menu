@@ -1,11 +1,14 @@
+import { Types } from 'mongoose';
+
 export interface MenuItem {
-  id: string;
+  _id?: Types.ObjectId;
   name: string;
   price: number;
   image: string;
   stock: number;
   description?: string;
   category: MenuCategory;
+  isAvailable?: boolean;
 }
 
 export type MenuCategory = 

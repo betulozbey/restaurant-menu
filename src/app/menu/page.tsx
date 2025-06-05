@@ -44,7 +44,7 @@ export default async function MenuPage() {
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {items.map((item) => (
                 <div
-                  key={item._id}
+                  key={item._id?.toString()}
                   className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
                 >
                   <div className="p-6">

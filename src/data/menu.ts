@@ -1,9 +1,8 @@
 import { MenuItem } from '../types/menu';
 
-export const menuItems: MenuItem[] = [
+export const menuItems: Omit<MenuItem, '_id'>[] = [
   // SICAK İÇECEKLER
   {
-    id: 'cay',
     name: 'Çay',
     price: 20,
     image: '/images/menu/ÇAY.jpg',
@@ -11,7 +10,6 @@ export const menuItems: MenuItem[] = [
     category: 'SICAK_ICECEKLER'
   },
   {
-    id: 'turk-kahvesi',
     name: 'Türk Kahvesi',
     price: 50,
     image: '/images/menu/Turk-Kahvesi.jpg',
@@ -19,7 +17,6 @@ export const menuItems: MenuItem[] = [
     category: 'SICAK_ICECEKLER'
   },
   {
-    id: 'filtre-kahve',
     name: 'Filtre Kahve',
     price: 100,
     image: '/images/menu/filtre-kahve.jpg',
@@ -27,7 +24,6 @@ export const menuItems: MenuItem[] = [
     category: 'SICAK_ICECEKLER'
   },
   {
-    id: 'latte',
     name: 'Latte',
     price: 80,
     image: '/images/menu/latte.jpg',
@@ -35,7 +31,6 @@ export const menuItems: MenuItem[] = [
     category: 'SICAK_ICECEKLER'
   },
   {
-    id: 'americano',
     name: 'Americano',
     price: 80,
     image: '/images/menu/americano.webp',
@@ -43,7 +38,6 @@ export const menuItems: MenuItem[] = [
     category: 'SICAK_ICECEKLER'
   },
   {
-    id: 'espresso',
     name: 'Espresso',
     price: 80,
     image: '/images/menu/espresso.jpeg',
@@ -51,7 +45,6 @@ export const menuItems: MenuItem[] = [
     category: 'SICAK_ICECEKLER'
   },
   {
-    id: 'caramel-macchiato',
     name: 'Caramel Macchiato',
     price: 120,
     image: '/images/menu/caramel-macchiato.webp',
@@ -60,7 +53,6 @@ export const menuItems: MenuItem[] = [
   },
   // SOĞUK İÇECEKLER
   {
-    id: 'su',
     name: 'Su',
     price: 20,
     image: '/images/menu/su.jpg',
@@ -68,7 +60,6 @@ export const menuItems: MenuItem[] = [
     category: 'SOGUK_ICECEKLER'
   },
   {
-    id: 'sade-soda',
     name: 'Sade Soda',
     price: 40,
     image: '/images/menu/sade_soda.webp',
@@ -76,7 +67,6 @@ export const menuItems: MenuItem[] = [
     category: 'SOGUK_ICECEKLER'
   },
   {
-    id: 'meyveli-soda',
     name: 'Meyveli Soda',
     price: 50,
     image: '/images/menu/meyveli-soda.png',
@@ -84,7 +74,6 @@ export const menuItems: MenuItem[] = [
     category: 'SOGUK_ICECEKLER'
   },
   {
-    id: 'limonata',
     name: 'Limonata',
     price: 100,
     image: '/images/menu/limonata.webp',
@@ -92,7 +81,6 @@ export const menuItems: MenuItem[] = [
     category: 'SOGUK_ICECEKLER'
   },
   {
-    id: 'ayran',
     name: 'Ayran',
     price: 50,
     image: '/images/menu/ayran.png',
@@ -100,7 +88,6 @@ export const menuItems: MenuItem[] = [
     category: 'SOGUK_ICECEKLER'
   },
   {
-    id: 'kola-fanta',
     name: 'Kola & Fanta',
     price: 60,
     image: '/images/menu/kola-fanta.jpg',
@@ -108,7 +95,6 @@ export const menuItems: MenuItem[] = [
     category: 'SOGUK_ICECEKLER'
   },
   {
-    id: 'gazoz',
     name: 'Gazoz',
     price: 60,
     image: '/images/menu/gazoz.jpeg',
@@ -116,7 +102,6 @@ export const menuItems: MenuItem[] = [
     category: 'SOGUK_ICECEKLER'
   },
   {
-    id: 'churchill',
     name: 'Churchill',
     price: 70,
     image: '/images/menu/Churchiil.jpeg',
@@ -124,7 +109,6 @@ export const menuItems: MenuItem[] = [
     category: 'SOGUK_ICECEKLER'
   },
   {
-    id: 'fuse-tea',
     name: 'Fuse Tea (Şeftali, Limon, Mango)',
     price: 60,
     image: '/images/menu/Fusetea.jpeg',
@@ -132,7 +116,6 @@ export const menuItems: MenuItem[] = [
     category: 'SOGUK_ICECEKLER'
   },
   {
-    id: 'meyve-suyu',
     name: 'Meyve Suyu (Kayısı - Şeftali - Karışık)',
     price: 60,
     image: '/images/menu/Meyve_Suyu.jpeg',
@@ -141,7 +124,6 @@ export const menuItems: MenuItem[] = [
   },
   // Soğuk Kahveler
   {
-    id: 'iced-latte',
     name: 'Iced Latte',
     price: 120,
     image: '/images/menu/Iced_Latte.jpeg',
@@ -149,7 +131,6 @@ export const menuItems: MenuItem[] = [
     category: 'SOGUK_ICECEKLER'
   },
   {
-    id: 'iced-americano',
     name: 'Iced Americano',
     price: 110,
     image: '/images/menu/Iced_Americano.jpg',
@@ -157,7 +138,6 @@ export const menuItems: MenuItem[] = [
     category: 'SOGUK_ICECEKLER'
   },
   {
-    id: 'iced-mocha',
     name: 'Iced Mocha',
     price: 140,
     image: '/images/menu/Iced-Mocha.webp',
@@ -165,7 +145,6 @@ export const menuItems: MenuItem[] = [
     category: 'SOGUK_ICECEKLER'
   },
   {
-    id: 'iced-caramel-macchiato',
     name: 'Iced Caramel Macchiato',
     price: 120,
     image: '/images/menu/IcedCaramelMacchiato.jpg',
@@ -174,7 +153,6 @@ export const menuItems: MenuItem[] = [
   },
   // GÖZLEMELER
   {
-    id: 'kasarli-gozleme',
     name: 'Kaşarlı Gözleme',
     price: 120,
     image: '/images/menu/kasarli-gozleme.jpg',
@@ -182,7 +160,6 @@ export const menuItems: MenuItem[] = [
     category: 'GOZLEMELER'
   },
   {
-    id: 'patatesli-gozleme',
     name: 'Patatesli Gözleme',
     price: 100,
     image: '/images/menu/patatesli-gozleme.webp',
@@ -190,7 +167,6 @@ export const menuItems: MenuItem[] = [
     category: 'GOZLEMELER'
   },
   {
-    id: 'peynirli-gozleme',
     name: 'Peynirli Gözleme',
     price: 100,
     image: '/images/menu/gozleme.jpg',
@@ -198,7 +174,6 @@ export const menuItems: MenuItem[] = [
     category: 'GOZLEMELER'
   },
   {
-    id: 'patatesli-kasarli-gozleme',
     name: 'Patatesli-Kaşarlı Gözleme',
     price: 150,
     image: '/images/menu/patatesli-kasarligozleme.jpeg',
@@ -207,7 +182,6 @@ export const menuItems: MenuItem[] = [
   },
   // TOSTLAR
   {
-    id: 'karisik-tost',
     name: 'Karışık Tost',
     price: 130,
     image: '/images/menu/karisik-tost.webp',
@@ -215,7 +189,6 @@ export const menuItems: MenuItem[] = [
     category: 'TOSTLAR'
   },
   {
-    id: 'kasarli-sucuklu-tost',
     name: 'Kaşarlı & Sucuklu Tost',
     price: 100,
     image: '/images/menu/kasarli-tost.webp',
@@ -224,7 +197,6 @@ export const menuItems: MenuItem[] = [
   },
   // FAST FOOD
   {
-    id: 'hamburger',
     name: 'Hamburger',
     price: 150,
     image: '/images/menu/hamburger.jpeg',
@@ -232,7 +204,6 @@ export const menuItems: MenuItem[] = [
     category: 'FAST_FOOD'
   },
   {
-    id: 'cheeseburger',
     name: 'Cheeseburger',
     price: 170,
     image: '/images/menu/cheese-burger.jpg',
@@ -241,7 +212,6 @@ export const menuItems: MenuItem[] = [
   },
   // ATISTIRMALIKLAR
   {
-    id: 'patates-tabagi',
     name: 'Patates Tabağı',
     price: 100,
     image: '/images/menu/patates_tabagi.png',
@@ -249,7 +219,6 @@ export const menuItems: MenuItem[] = [
     category: 'ATISTIRMALIKLAR'
   },
   {
-    id: 'citir-sepet',
     name: 'Çıtır Sepet',
     price: 150,
     image: '/images/menu/citir-sepet.jpg',
@@ -258,7 +227,6 @@ export const menuItems: MenuItem[] = [
   },
   // KAHVALTI
   {
-    id: 'kahvalti-tabagi',
     name: 'Kahvaltı Tabağı',
     price: 250,
     image: '/images/menu/kahvaltı.jpeg',
@@ -267,7 +235,6 @@ export const menuItems: MenuItem[] = [
   },
   // TATLILAR
   {
-    id: 'tatli-cesitleri',
     name: 'Tatlı Çeşitleri',
     price: 120,
     image: '/images/menu/tatlı.webp',
