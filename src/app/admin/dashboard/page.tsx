@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { MenuItem } from '@/types/menu';
 import AdminNav from '@/components/AdminNav';
+import connectDB from '@/utils/db';
+import MenuItemModel from '@/models/MenuItem';
 
 export default function AdminDashboard() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
@@ -29,12 +31,16 @@ export default function AdminDashboard() {
       const data = await res.json();
       
       if (res.ok) {
-        setMenuItems(data);
+        setMenuItems(data.map((item: any) => ({
+          ...item,
+          _id: item._id?.toString() || item.id
+        })));
       } else {
         setError('Menü öğeleri yüklenirken bir hata oluştu');
       }
-    } catch (err) {
-      setError('Sunucu hatası');
+    } catch (error) {
+      setError('Menü öğeleri yüklenirken bir hata oluştu');
+      console.error('Hata:', error);
     } finally {
       setLoading(false);
     }
@@ -168,7 +174,7 @@ export default function AdminDashboard() {
           <h2 className="text-xl font-semibold mb-4">Mevcut Ürünler</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {menuItems.map((item) => (
-              <div key={item._id} className="border rounded-lg p-4">
+              <div key={item._id || item.name} className="border rounded-lg p-4">
                 {item.image && (
                   <img
                     src={item.image}
