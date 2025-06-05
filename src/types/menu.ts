@@ -5,10 +5,8 @@ export interface MenuItem {
   name: string;
   price: number;
   image: string;
-  stock: number;
   description?: string;
-  category: MenuCategory;
-  isAvailable?: boolean;
+  category: string;
 }
 
 export type MenuCategory = 

@@ -45,7 +45,7 @@ export default function Menu({ className = '' }: MenuProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
         {currentItems.map(item => (
           <div
-            key={item.id}
+            key={item.name}
             className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all transform hover:scale-[1.02] group"
           >
             <div className="relative h-56 overflow-hidden">
@@ -62,25 +62,7 @@ export default function Menu({ className = '' }: MenuProps) {
             <div className="p-5">
               <h3 className="text-xl font-semibold mb-3">{item.name}</h3>
               <div className="flex justify-between items-center">
-                <div className="flex flex-col">
-                  <span className="text-2xl font-bold text-orange-500">{item.price} ₺</span>
-                  {item.stock === 0 && (
-                    <span className="text-red-500 text-sm mt-1">Stokta Yok</span>
-                  )}
-                </div>
-                <button
-                  disabled={item.stock === 0}
-                  className={`px-5 py-2.5 rounded-full transition-all transform hover:scale-105 
-                    ${item.stock === 0 
-                      ? 'bg-gray-300 cursor-not-allowed' 
-                      : 'bg-orange-500 text-white hover:bg-orange-600 active:scale-95'
-                    }`}
-                  onClick={() => {
-                    // Sepete ekleme fonksiyonu
-                  }}
-                >
-                  {item.stock === 0 ? 'Stokta Yok' : 'Sepete Ekle'}
-                </button>
+                <span className="text-2xl font-bold text-orange-500">{item.price} ₺</span>
               </div>
             </div>
           </div>
