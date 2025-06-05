@@ -21,10 +21,10 @@ export default function QRPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-amber-50 py-8">
+    <div className="min-h-screen bg-stone-50 py-8">
       <div className="container mx-auto px-4">
         <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg p-8">
-          <h1 className="text-2xl font-bold text-amber-800 mb-6 text-center">
+          <h1 className="text-2xl font-bold text-stone-800 mb-6 text-center">
             Tarihi Taş Mekan - Menü QR Kodu
           </h1>
           
@@ -35,10 +35,10 @@ export default function QRPage() {
                 alt="Menü QR Kodu"
                 className="w-64 h-64 mb-4"
               />
-              <p className="text-center text-gray-600 mb-4">
+              <p className="text-center text-stone-600 mb-4">
                 Bu QR kodu telefonunuzla okutarak menümüze ulaşabilirsiniz.
               </p>
-              <div className="text-center text-sm text-gray-500 mt-4">
+              <div className="text-center text-sm text-stone-500 mt-4">
                 <p>QR kod bağlantısı:</p>
                 <p className="font-mono break-all">{menuUrl}</p>
               </div>

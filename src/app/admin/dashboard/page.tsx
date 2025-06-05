@@ -95,10 +95,10 @@ export default function AdminDashboard() {
   if (loading) return <div className="text-center py-12">Yükleniyor...</div>;
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-amber-100 to-amber-200">
+    <main className="min-h-screen bg-gradient-to-b from-stone-100 to-stone-200">
       <AdminNav />
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold text-amber-800 mb-8">Menü Yönetimi</h1>
+        <h1 className="text-3xl font-bold text-stone-800 mb-8">Menü Yönetimi</h1>
 
         {error && (
           <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -163,7 +163,7 @@ export default function AdminDashboard() {
             </div>
             <button
               type="submit"
-              className="bg-amber-600 text-white px-4 py-2 rounded-md hover:bg-amber-700"
+              className="bg-stone-800 text-white px-4 py-2 rounded-md hover:bg-stone-700 transition-colors"
             >
               Ürün Ekle
             </button>
@@ -184,7 +184,7 @@ export default function AdminDashboard() {
                 )}
                 <h3 className="font-semibold">{item.name}</h3>
                 <p className="text-gray-600 text-sm mb-2">{item.description}</p>
-                <p className="text-amber-600 font-bold mb-2">{item.price} ₺</p>
+                <p className="text-stone-800 font-bold mb-2">{item.price} ₺</p>
                 <p className="text-gray-500 text-sm mb-4">{item.category}</p>
                 <button
                   onClick={() => handleDelete(item._id?.toString() || '')}

@@ -7,11 +7,11 @@ export default function AdminNav() {
   const pathname = usePathname();
 
   const isActive = (path: string) => {
-    return pathname === path ? 'bg-primary-700' : 'hover:bg-primary-700';
+    return pathname === path ? 'bg-stone-700' : 'hover:bg-stone-700';
   };
 
   return (
-    <nav className="bg-primary-800 text-white p-4 mb-8">
+    <nav className="bg-stone-800 text-white p-4 mb-8">
       <div className="container mx-auto flex flex-wrap gap-4">
         <Link
           href="/admin/dashboard"
@@ -31,7 +31,7 @@ export default function AdminNav() {
             document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
             window.location.href = '/admin';
           }}
-          className="px-4 py-2 rounded-md hover:bg-primary-700 transition-colors ml-auto"
+          className="px-4 py-2 rounded-md hover:bg-stone-700 transition-colors ml-auto"
         >
           Çıkış Yap
         </button>
