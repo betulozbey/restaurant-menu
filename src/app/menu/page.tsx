@@ -1,17 +1,15 @@
-import connectDB from '@/utils/db';
-import MenuItem from '@/models/MenuItem';
 import Logo from '@/components/Logo';
-import { MenuItem as MenuItemInterface } from '@/types/menu';
+import { menuItems } from '@/data/menuItems';
 
-async function getMenuItems() {
-  await connectDB();
-  const items = await MenuItem.find({ isAvailable: true }).sort({ category: 1 });
-  return JSON.parse(JSON.stringify(items)) as MenuItemInterface[];
-}
+type MenuItem = {
+  name: string;
+  description: string;
+  price: number;
+  category: string;
+  isAvailable: boolean;
+};
 
-export default async function MenuPage() {
-  const menuItems = await getMenuItems();
-
+export default function MenuPage() {
   // Menü öğelerini kategorilere göre grupla
   const categorizedItems = menuItems.reduce((acc, item) => {
     if (!acc[item.category]) {
@@ -19,7 +17,7 @@ export default async function MenuPage() {
     }
     acc[item.category].push(item);
     return acc;
-  }, {} as Record<string, MenuItemInterface[]>);
+  }, {} as Record<string, MenuItem[]>);
 
   return (
     <main className="min-h-screen bg-amber-50 py-8">
@@ -44,7 +42,7 @@ export default async function MenuPage() {
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {items.map((item) => (
                 <div
-                  key={item._id?.toString()}
+                  key={item.name}
                   className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
                 >
                   <div className="p-6">

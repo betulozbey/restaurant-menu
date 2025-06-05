@@ -1,4 +1,4 @@
-import Menu from '../components/Menu';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -13,22 +13,12 @@ export default function Home() {
           <p className="text-xl md:text-2xl text-gray-200 mb-8">
             Geleneksel Lezzetler, Modern Sunum
           </p>
-          <a
-            href="#menu"
+          <Link
+            href="/menu"
             className="inline-block bg-orange-500 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-600 transition-colors"
           >
             Menüyü İncele
-          </a>
-        </div>
-      </section>
-
-      {/* Menu Section */}
-      <section id="menu" className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Menümüz
-          </h2>
-          <Menu />
+          </Link>
         </div>
       </section>
 

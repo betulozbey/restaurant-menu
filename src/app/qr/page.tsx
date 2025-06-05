@@ -38,14 +38,10 @@ export default function QRPage() {
               <p className="text-center text-gray-600 mb-4">
                 Bu QR kodu telefonunuzla okutarak menümüze ulaşabilirsiniz.
               </p>
-              <a 
-                href={menuUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-amber-600 hover:text-amber-700 underline"
-              >
-                Menüyü tarayıcıda aç
-              </a>
+              <div className="text-center text-sm text-gray-500 mt-4">
+                <p>QR kod bağlantısı:</p>
+                <p className="font-mono break-all">{menuUrl}</p>
+              </div>
             </div>
           ) : (
             <p className="text-red-600 text-center">
