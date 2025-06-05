@@ -1,19 +1,12 @@
 import connectDB from '@/utils/db';
 import MenuItem from '@/models/MenuItem';
 import Logo from '@/components/Logo';
-
-interface MenuItemType {
-  _id: string;
-  name: string;
-  description: string;
-  price: number;
-  category: string;
-}
+import { MenuItem as MenuItemInterface } from '@/types/menu';
 
 async function getMenuItems() {
   await connectDB();
   const items = await MenuItem.find({ isAvailable: true }).sort({ category: 1 });
-  return JSON.parse(JSON.stringify(items)) as MenuItemType[];
+  return JSON.parse(JSON.stringify(items)) as MenuItemInterface[];
 }
 
 export default async function MenuPage() {
@@ -26,7 +19,7 @@ export default async function MenuPage() {
     }
     acc[item.category].push(item);
     return acc;
-  }, {} as Record<string, MenuItemType[]>);
+  }, {} as Record<string, MenuItemInterface[]>);
 
   return (
     <main className="min-h-screen bg-amber-50 py-8">
