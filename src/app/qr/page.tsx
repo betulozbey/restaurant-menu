@@ -1,22 +1,24 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import QRCode from 'qrcode';
-import { headers } from 'next/headers';
 
-async function generateQRCode(url: string) {
-  try {
-    const qrDataUrl = await QRCode.toDataURL(url);
-    return qrDataUrl;
-  } catch (err) {
-    console.error('QR kod oluşturma hatası:', err);
-    return null;
-  }
-}
+export default function QRPage() {
+  const [qrCode, setQrCode] = useState<string | null>(null);
+  const menuUrl = 'https://tas-mekan.vercel.app/menu';
 
-export default async function QRPage() {
-  const headersList = headers();
-  const domain = headersList.get('host') || 'localhost:3000';
-  const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https';
-  const menuUrl = `${protocol}://${domain}/menu`;
-  const qrCode = await generateQRCode(menuUrl);
+  useEffect(() => {
+    async function generateQR() {
+      try {
+        const qrDataUrl = await QRCode.toDataURL(menuUrl);
+        setQrCode(qrDataUrl);
+      } catch (err) {
+        console.error('QR kod oluşturma hatası:', err);
+        setQrCode(null);
+      }
+    }
+    generateQR();
+  }, []);
 
   return (
     <div className="min-h-screen bg-amber-50 py-8">
