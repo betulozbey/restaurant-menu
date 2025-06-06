@@ -2,7 +2,8 @@ const QRCode = require('qrcode');
 const fs = require('fs');
 const path = require('path');
 
-const url = 'http://tas-mekan.vercel.app/#menu';
+// IP adresi üzerinden erişim
+const url = 'https://tas-mekan.vercel.app/#menu';
 const desktopPath = path.join(process.env.USERPROFILE, 'Desktop', 'tas-mekan-qr.png');
 
 // QR kodu oluştur ve PNG olarak kaydet
