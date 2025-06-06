@@ -252,13 +252,13 @@ export default function Menu({ className = '' }: MenuProps) {
       </div>
 
       {/* Menü Öğeleri */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
         {currentItems.map(item => (
           <div
             key={item.name}
             className="bg-white rounded-xl overflow-hidden group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
           >
-            <div className="relative h-52 overflow-hidden">
+            <div className="relative h-48 sm:h-52 overflow-hidden">
               <Image
                 src={item.image}
                 alt={item.name}
@@ -269,12 +269,12 @@ export default function Menu({ className = '' }: MenuProps) {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
-            <div className="relative p-6 bg-white shadow-sm">
+            <div className="relative p-4 sm:p-6 bg-white shadow-sm">
               <div className="flex items-center gap-4">
-                <h3 className="text-xl font-playfair text-stone-800">{item.name}</h3>
+                <h3 className="text-lg sm:text-xl font-playfair text-stone-800">{item.name}</h3>
                 <div className="flex-grow border-t border-stone-200"></div>
-                <div className="font-playfair">
-                  <span className="text-2xl text-stone-800">{item.price}</span>
+                <div className="font-playfair whitespace-nowrap">
+                  <span className="text-xl sm:text-2xl text-stone-800">{item.price}</span>
                   <span className="text-lg text-stone-600 ml-1">₺</span>
                 </div>
               </div>
